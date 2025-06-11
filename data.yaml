@@ -10,7 +10,7 @@ work:
     end: Present
     bullets:
       - Built Python Slackbot to deliver KPIs to 200+ users
-      - Deployed on AWS Lambda & Docker (cut manual work 18 h/w)
+      - Deployed on AWS Lambda \& Docker (cut manual work 18 h/w)
       - Optimized data pipelines improving processing speed by 40%
       - Collaborated with cross-functional teams to implement analytics solutions
   
@@ -36,7 +36,7 @@ education:
 skills:
   - category: Programming Languages
     technologies: ["Python", "SQL", "R", "JavaScript", "Java"]
-  - category: Tools & Technologies
+  - category: Tools \& Technologies
     technologies: ["AWS", "Docker", "Git", "Tableau", "Power BI"]
   - category: Databases
     technologies: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] 
