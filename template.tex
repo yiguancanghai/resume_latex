@@ -4,6 +4,7 @@
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
+\usepackage{tabularx}
 
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large\bfseries
@@ -72,12 +73,12 @@
 
 {% if skills %}
 \section{Technical Skills}
-{% for skill in skills %}
-\textbf{ {{ skill.category }} }: 
-{% for tech in skill.technologies %}
-{{ tech }}{% if not loop.last %}, {% endif %}
-{% endfor %} \\
-{% endfor %}
+\small
+\begin{tabularx}{\textwidth}{l X}
+  {% for skill in skills %}
+    \textbf{ {{ skill.category }} } : & {{ skill.technologies | join(' · ') }} \\
+  {% endfor %}
+\end{tabularx}
 {% endif %}
 
 \end{document} 
