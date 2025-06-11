@@ -1,93 +1,65 @@
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{enumitem}
-\usepackage{hyperref}
+\documentclass{resume}
 \usepackage{tabularx}
-\usepackage{array}
-
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\titlerule \vspace{-5pt}]
-
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
 \begin{document}
 
-\begin{center}
-    {\Large \textbf{ {{ name }} }} \\
-    {{ email }} | {{ phone }} | {{ location }}
-\end{center}
+\name{ {{ name }} }
+\contactInfo{ {{ email }} } {Phone: {{ phone }} • {{ location }}}
 
+% --------- Summary (optional) ----------
 {% if summary %}
-\section{Professional Summary}
-{{ summary }}
+\section{Summary}
+\small{{ summary }}
 {% endif %}
 
+% --------- Work Experience -------------
 \section{Experience}
+\resumeSubHeadingListStart
 {% for job in work %}
-\textbf{ {{ job.company }} } \hfill \textbf{ {{ job.start }} -- {{ job.end }} } \\
-\textit{ {{ job.position }} }{% if job.location %} \hfill {{ job.location }}{% endif %} \\
-\begin{itemize}[leftmargin=0.15in]
-{% for bullet in job.bullets %}
-\item {{ bullet }}
+\resumeSubheading
+  { {{ job.company }} } & { {{ job.position }} } \\
+  { {{ job.start }} } -- { {{ job.end }} } & { {{ job.location or '' }} } \\
+\resumeItemListStart
+  {% for b in job.bullets %}
+    \resumeItem{ {{ b }} }
+  {% endfor %}
+\resumeItemListEnd
 {% endfor %}
-\end{itemize}
-{% endfor %}
+\resumeSubHeadingListEnd
 
+% ---------- Key Projects ---------------
 {% if projects %}
 \section{Key Projects}
+\resumeSubHeadingListStart
 {% for project in projects %}
-\textbf{ {{ project.name }} } \hfill \textbf{ {{ project.start }} -- {{ project.end }} } \\
-\textit{ {{ project.role }} } \\
-\begin{itemize}[leftmargin=0.15in]
-{% for bullet in project.bullets %}
-\item {{ bullet }}
+\resumeSubheading
+  { {{ project.name }} } & { {{ project.role }} } \\
+  { {{ project.start }} } -- { {{ project.end }} } & \\
+\resumeItemListStart
+  {% for b in project.bullets %}
+    \resumeItem{ {{ b }} }
+  {% endfor %}
+\resumeItemListEnd
 {% endfor %}
-\end{itemize}
-{% endfor %}
+\resumeSubHeadingListEnd
 {% endif %}
 
-{% if education %}
+% ---------- Education ------------------
 \section{Education}
+\resumeSubHeadingListStart
 {% for edu in education %}
-\textbf{ {{ edu.institution }} } \hfill \textbf{ {{ edu.start }} -- {{ edu.end }} } \\[2pt]
-\textit{ {{ edu.degree }} }{% if edu.location %} \hfill {{ edu.location }}{% endif %} \\[6pt]
-{% if edu.details %}
-\begin{itemize}[leftmargin=0.15in]
-{% for detail in edu.details %}
-\item {{ detail }}
+\resumeSubheading
+  { {{ edu.institution }} } & { {{ edu.degree }} } \\
+  { {{ edu.start }} } -- { {{ edu.end }} } & { {{ edu.location }} } \\
 {% endfor %}
-\end{itemize}
-{% endif %}
-{% endfor %}
-{% endif %}
+\resumeSubHeadingListEnd
 
-{% if skills %}
-% ---------- Technical Skills ----------
+% ---------- Technical Skills -----------
 \section{Technical Skills}
-
-% 行高 + 列间距微调（可自行改数值）
-\renewcommand{\arraystretch}{1.25}     % ↑整体行距 1.25 倍
-\setlength{\tabcolsep}{4pt}            % 列左右内边距 4 pt
-
 \small
-\begin{tabularx}{\textwidth}{  % 左列 = 固定 3.5 cm；右列 = X 自动换行
-  >{\raggedright\arraybackslash\bfseries}p{3.5cm}  X
-}
-  {% for skill in skills %}
-    {{ skill.category }} & {{ skill.technologies | join(' · ') }} \\[4pt]  % [4pt]=额外行距
+\begin{tabularx}{\textwidth}{>{\raggedright\bfseries}p{4.5cm} X}
+  {% for s in skills %}
+    {{ s.category }} & {{ s.technologies | join(', ') }} \\[4pt]
   {% endfor %}
 \end{tabularx}
-{% endif %}
 
 \end{document} 
