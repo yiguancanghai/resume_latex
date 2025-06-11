@@ -26,10 +26,15 @@
     {{ email }} | {{ phone }} | {{ location }}
 \end{center}
 
+{% if summary %}
+\section{Professional Summary}
+{{ summary }}
+{% endif %}
+
 \section{Experience}
 {% for job in work %}
 \textbf{ {{ job.company }} } \hfill \textbf{ {{ job.start }} -- {{ job.end }} } \\
-\textit{ {{ job.position }} } \\
+\textit{ {{ job.position }} }{% if job.location %} \hfill {{ job.location }}{% endif %} \\
 \begin{itemize}[leftmargin=0.15in]
 {% for bullet in job.bullets %}
 \item {{ bullet }}
@@ -37,11 +42,24 @@
 \end{itemize}
 {% endfor %}
 
+{% if projects %}
+\section{Key Projects}
+{% for project in projects %}
+\textbf{ {{ project.name }} } \hfill \textbf{ {{ project.start }} -- {{ project.end }} } \\
+\textit{ {{ project.role }} } \\
+\begin{itemize}[leftmargin=0.15in]
+{% for bullet in project.bullets %}
+\item {{ bullet }}
+{% endfor %}
+\end{itemize}
+{% endfor %}
+{% endif %}
+
 {% if education %}
 \section{Education}
 {% for edu in education %}
 \textbf{ {{ edu.institution }} } \hfill \textbf{ {{ edu.start }} -- {{ edu.end }} } \\
-\textit{ {{ edu.degree }} } \\
+\textit{ {{ edu.degree }} }{% if edu.location %} \hfill {{ edu.location }}{% endif %} \\
 {% if edu.details %}
 \begin{itemize}[leftmargin=0.15in]
 {% for detail in edu.details %}

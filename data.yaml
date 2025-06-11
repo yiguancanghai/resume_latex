@@ -1,42 +1,128 @@
+# ===== 基本信息 =====
 name: Rey (Ruishu) An
 email: anruishu@gmail.com
 phone: 604-868-5222
-location: Vancouver, BC
+location: Vancouver, BC, Canada
 
+summary: >
+  Business Systems Analyst with 5+ years of experience in agile project delivery,
+  requirements gathering, and system implementation. Strong background in data
+  analysis, process documentation, and stakeholder management. Experienced in
+  working with cross‑functional teams to elicit business requirements, develop
+  user stories, and execute functional testing.
+
+# ===== 工作经历 =====
 work:
-  - company: Trulioo
-    position: Analytics Engineer
-    start: 2024-06
-    end: Present
+  - company: Amazon
+    position: Business Analyst – Operations Systems
+    location: Beijing, China
+    start: Nov 2021
+    end: Nov 2023
     bullets:
-      - Built Python Slackbot to deliver KPIs to 200+ users
-      - Deployed on AWS Lambda \& Docker (cut manual work 18 h/w)
-      - Optimized data pipelines improving processing speed by 40%
-      - Collaborated with cross-functional teams to implement analytics solutions
-  
-  - company: Previous Company
-    position: Data Analyst
-    start: 2022-01
-    end: 2024-05
-    bullets:
-      - Developed automated reporting systems using Python and SQL
-      - Created interactive dashboards serving 100+ stakeholders
-      - Reduced manual data processing time by 60% through automation
-      - Led data quality initiatives improving accuracy by 25%
+      - Elicited and documented business requirements from multiple stakeholder groups, creating detailed user stories and process flows
+      - Facilitated workshops with cross‑functional teams to align on system requirements and process improvements
+      - Executed functional testing for new system implementations, documenting test cases and collaborating on defect resolution
+      - Created visual representations using Lucidchart to communicate complex business processes
+      - Worked in Agile Scrum methodology, contributing to sprint planning and ensuring successful delivery of objectives
+      - Analyzed operational data to identify process improvements, reducing processing time by 40 %
 
+  - company: Yidian
+    position: Business Systems Analyst – Digital Platforms
+    location: Beijing, China
+    start: Mar 2019
+    end: May 2021
+    bullets:
+      - Gathered and analyzed requirements for dashboard development, creating detailed acceptance criteria and use cases
+      - Managed stakeholder engagement throughout implementation journey, ensuring acceptance at each project phase
+      - Documented business processes and system integrations, maintaining documentation as systems evolved
+      - Conducted A/B testing analysis to validate business requirements and measure implementation success
+      - Collaborated with development teams using JIRA and Confluence for tracking and documentation
+      - Developed subject‑matter expertise in user‑behavior analytics and reporting systems
+
+  - company: Coola Data
+    position: Junior Business Analyst – Marketing Systems
+    location: New York, NY, USA
+    start: May 2017
+    end: Jul 2018
+    bullets:
+      - Assisted in documenting business requirements for marketing‑automation system implementation
+      - Created process‑flow diagrams to support system design and integration activities
+      - Participated in functional testing and user‑acceptance testing for new features
+      - Collaborated with vendors to clarify business requirements and ensure alignment with objectives
+      - Maintained system documentation and user guides for marketing‑technology platforms
+
+# ===== 教育经历 =====
 education:
-  - institution: University of British Columbia
-    degree: Bachelor of Science in Computer Science
-    start: 2018-09
-    end: 2022-05
-    details:
-      - "GPA: 3.8/4.0"
-      - "Relevant Coursework: Data Structures, Algorithms, Database Systems"
+  - institution: Fairleigh Dickinson University
+    degree: "M.S., Computer Science (Business Systems Focus)"
+    location: Vancouver, BC, Canada
+    start: Jan 2024
+    end: Jul 2025
 
+  - institution: New York University
+    degree: "M.S., Technology Management"
+    location: New York, NY, USA
+    start: Aug 2015
+    end: Apr 2017
+
+  - institution: HeiLongJiang University
+    degree: "B.A., Business Administration"
+    location: Harbin, China
+    start: Sep 2006
+    end: Jul 2010
+
+# ===== 项目 =====
+projects:
+  - name: HRIS Implementation and Migration Project
+    role: Business Systems Analyst
+    start: Jun 2024
+    end: Sep 2024
+    bullets:
+      - Led end‑to‑end HRIS implementation, including UKG Pro configuration simulation and HRM policy alignment
+      - Managed data migration: mapping, cleansing, validation, and secure import of legacy HR records (GDPR \& PIPEDA compliant)
+      - Designed integration architecture connecting HRIS with payroll/time systems via APIs and middleware
+      - Developed functional test cases; executed testing cycles and coordinated defect triage
+      - Facilitated UAT sessions, created training materials, and drove change‑management strategies
+
+  - name: Workforce Management System Configuration
+    role: Business Systems Analyst
+    start: Oct 2024
+    end: Nov 2024
+    bullets:
+      - Defined WFM Pro configuration requirements for retail scheduling and time tracking
+      - Built business‑process workflows (recruiting → offboarding) with Visio/Lucidchart
+      - Authored comprehensive TestRail scenarios; monitored post‑deployment performance and continuous improvements
+      - Documented configurations and published knowledge‑base articles in Confluence
+
+  - name: HR Analytics \& Reporting Platform
+    role: Business Systems Analyst
+    start: Feb 2024
+    end: Apr 2024
+    bullets:
+      - Gathered reporting requirements and authored functional specs for Power BI dashboards
+      - Built data‑integration workflows consolidating multiple HR systems
+      - Executed report‑validation tests ensuring accuracy for headcount, turnover, compliance metrics
+      - Conducted user training for self‑service reporting
+
+# ===== 技能 =====
 skills:
-  - category: Programming Languages
-    technologies: ["Python", "SQL", "R", "JavaScript", "Java"]
-  - category: Tools \& Technologies
-    technologies: ["AWS", "Docker", "Git", "Tableau", "Power BI"]
-  - category: Databases
-    technologies: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] 
+  - category: Business Analysis
+    technologies: [Requirements Gathering, User Stories, Use‑Case Docs, Gap Analysis]
+
+  - category: Testing \& QA
+    technologies: [Functional Testing, Test Case Dev, TestRail, UAT, Defect Management]
+
+  - category: Project / Agile Tools
+    technologies: [JIRA, Confluence, Scrum, Sprint Planning, Stakeholder Mgmt]
+
+  - category: Process Documentation
+    technologies: [Visio, Lucidchart, BPMN, System Docs]
+
+  - category: Technical
+    technologies: [SQL, Python, API Concepts, Data Analysis, System Configuration]
+
+  - category: HR \& Retail
+    technologies: [HRIS, HR Policies, Retail Ops, Data Privacy, Compliance]
+
+  - category: Soft Skills
+    technologies: [Stakeholder Communication, Workshop Facilitation, Conflict Resolution, Critical Thinking]
