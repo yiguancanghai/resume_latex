@@ -5,6 +5,7 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{tabularx}
+\usepackage{array}
 
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large\bfseries
@@ -59,8 +60,8 @@
 {% if education %}
 \section{Education}
 {% for edu in education %}
-\textbf{ {{ edu.institution }} } \hfill \textbf{ {{ edu.start }} -- {{ edu.end }} } \\
-\textit{ {{ edu.degree }} }{% if edu.location %} \hfill {{ edu.location }}{% endif %} \\
+\textbf{ {{ edu.institution }} } \hfill \textbf{ {{ edu.start }} -- {{ edu.end }} } \\[2pt]
+\textit{ {{ edu.degree }} }{% if edu.location %} \hfill {{ edu.location }}{% endif %} \\[6pt]
 {% if edu.details %}
 \begin{itemize}[leftmargin=0.15in]
 {% for detail in edu.details %}
@@ -72,11 +73,19 @@
 {% endif %}
 
 {% if skills %}
+% ---------- Technical Skills ----------
 \section{Technical Skills}
+
+% 行高 + 列间距微调（可自行改数值）
+\renewcommand{\arraystretch}{1.25}     % ↑整体行距 1.25 倍
+\setlength{\tabcolsep}{4pt}            % 列左右内边距 4 pt
+
 \small
-\begin{tabularx}{\textwidth}{l X}
+\begin{tabularx}{\textwidth}{  % 左列 = 固定 3.5 cm；右列 = X 自动换行
+  >{\raggedright\arraybackslash\bfseries}p{3.5cm}  X
+}
   {% for skill in skills %}
-    \textbf{ {{ skill.category }} } : & {{ skill.technologies | join(' · ') }} \\
+    {{ skill.category }} & {{ skill.technologies | join(' · ') }} \\[4pt]  % [4pt]=额外行距
   {% endfor %}
 \end{tabularx}
 {% endif %}
