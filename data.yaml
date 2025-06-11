@@ -1,0 +1,42 @@
+name: Rey (Ruishu) An
+email: anruishu@gmail.com
+phone: 604-868-5222
+location: Vancouver, BC
+
+work:
+  - company: Trulioo
+    position: Analytics Engineer
+    start: 2024-06
+    end: Present
+    bullets:
+      - Built Python Slackbot to deliver KPIs to 200+ users
+      - Deployed on AWS Lambda & Docker (cut manual work 18 h/w)
+      - Optimized data pipelines improving processing speed by 40%
+      - Collaborated with cross-functional teams to implement analytics solutions
+  
+  - company: Previous Company
+    position: Data Analyst
+    start: 2022-01
+    end: 2024-05
+    bullets:
+      - Developed automated reporting systems using Python and SQL
+      - Created interactive dashboards serving 100+ stakeholders
+      - Reduced manual data processing time by 60% through automation
+      - Led data quality initiatives improving accuracy by 25%
+
+education:
+  - institution: University of British Columbia
+    degree: Bachelor of Science in Computer Science
+    start: 2018-09
+    end: 2022-05
+    details:
+      - "GPA: 3.8/4.0"
+      - "Relevant Coursework: Data Structures, Algorithms, Database Systems"
+
+skills:
+  - category: Programming Languages
+    technologies: ["Python", "SQL", "R", "JavaScript", "Java"]
+  - category: Tools & Technologies
+    technologies: ["AWS", "Docker", "Git", "Tableau", "Power BI"]
+  - category: Databases
+    technologies: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] 

@@ -1,0 +1,65 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\titlerule \vspace{-5pt}]
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{ {{ name }} }} \\
+    {{ email }} | {{ phone }} | {{ location }}
+\end{center}
+
+\section{Experience}
+{% for job in work %}
+\textbf{ {{ job.company }} } \hfill \textbf{ {{ job.start }} -- {{ job.end }} } \\
+\textit{ {{ job.position }} } \\
+\begin{itemize}[leftmargin=0.15in]
+{% for bullet in job.bullets %}
+\item {{ bullet }}
+{% endfor %}
+\end{itemize}
+{% endfor %}
+
+{% if education %}
+\section{Education}
+{% for edu in education %}
+\textbf{ {{ edu.institution }} } \hfill \textbf{ {{ edu.start }} -- {{ edu.end }} } \\
+\textit{ {{ edu.degree }} } \\
+{% if edu.details %}
+\begin{itemize}[leftmargin=0.15in]
+{% for detail in edu.details %}
+\item {{ detail }}
+{% endfor %}
+\end{itemize}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if skills %}
+\section{Technical Skills}
+{% for skill in skills %}
+\textbf{ {{ skill.category }} }: 
+{% for tech in skill.technologies %}
+{{ tech }}{% if not loop.last %}, {% endif %}
+{% endfor %} \\
+{% endfor %}
+{% endif %}
+
+\end{document} 
