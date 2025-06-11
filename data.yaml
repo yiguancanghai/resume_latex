@@ -79,7 +79,7 @@ projects:
     end: Sep 2024
     bullets:
       - Led end‑to‑end HRIS implementation, including UKG Pro configuration simulation and HRM policy alignment
-      - Managed data migration: mapping, cleansing, validation, and secure import of legacy HR records (GDPR \& PIPEDA compliant)
+      - "Managed data migration: mapping, cleansing, validation, and secure import of legacy HR records (GDPR \\& PIPEDA compliant)"
       - Designed integration architecture connecting HRIS with payroll/time systems via APIs and middleware
       - Developed functional test cases; executed testing cycles and coordinated defect triage
       - Facilitated UAT sessions, created training materials, and drove change‑management strategies
