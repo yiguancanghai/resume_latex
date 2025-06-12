@@ -16,8 +16,7 @@
 \resumeSubHeadingListStart
 {% for job in work %}
 \resumeSubheading
-  { {{ job.company }} } & { {{ job.position }} } \\
-  { {{ job.start }} } -- { {{ job.end }} } & { {{ job.location or '' }} } \\
+  { {{ job.company }} }{ {{ job.position }} }{ {{ job.start }} -- {{ job.end }} }{ {{ job.location or '' }} }
 \resumeItemListStart
   {% for b in job.bullets %}
     \resumeItem{ {{ b }} }
@@ -32,8 +31,7 @@
 \resumeSubHeadingListStart
 {% for project in projects %}
 \resumeSubheading
-  { {{ project.name }} } & { {{ project.role }} } \\
-  { {{ project.start }} } -- { {{ project.end }} } & \\
+  { {{ project.name }} }{ {{ project.role }} }{ {{ project.start }} -- {{ project.end }} }{ }
 \resumeItemListStart
   {% for b in project.bullets %}
     \resumeItem{ {{ b }} }
@@ -48,8 +46,7 @@
 \resumeSubHeadingListStart
 {% for edu in education %}
 \resumeSubheading
-  { {{ edu.institution }} } & { {{ edu.degree }} } \\
-  { {{ edu.start }} } -- { {{ edu.end }} } & { {{ edu.location }} } \\
+  { {{ edu.institution }} }{ {{ edu.degree }} }{ {{ edu.start }} -- {{ edu.end }} }{ {{ edu.location }} }
 {% endfor %}
 \resumeSubHeadingListEnd
 
