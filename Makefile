@@ -1,27 +1,26 @@
 # Makefile for LaTeX Resume Pipeline
 # 使用 latexmk 进行 PDF 编译
 
-.PHONY: all tex pdf clean help
+.PHONY: all clean
 
 # 默认目标
-all: pdf
+all: resume.pdf
 
 # 渲染 LaTeX
-tex:
+resume.tex: template.tex data.yaml render.py
 	@echo "🔄 渲染 YAML 数据到 LaTeX..."
 	python3 render.py
 
 # 编译 PDF
-pdf: tex
+resume.pdf: resume.tex
 	@echo "🔄 编译 PDF..."
-	latexmk -pdf -quiet -interaction=nonstopmode resume.tex
+	latexmk -xelatex -quiet resume.tex
 	@echo "✅ 生成完成: resume.pdf"
 
 # 清理中间文件
 clean:
 	@echo "🧹 清理中间文件..."
-	latexmk -C
-	rm -f resume.tex *.fls *.fdb_latexmk *.aux *.log *.out *.synctex.gz
+	rm -f *.aux *.log *.out *.pdf *.tex
 	@echo "✅ 清理完成"
 
 # 显示帮助信息

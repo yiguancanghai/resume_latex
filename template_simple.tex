@@ -1,0 +1,21 @@
+\documentclass{resume}
+\begin{document}
+
+\name{{{ name }}}
+\contactInfo{{{ email }}}{Phone: {{ phone }} • {{ location }}}
+
+\section{Summary}
+{{ summary }}
+
+\section{Experience}
+\resumeSubHeadingListStart
+{% for job in work %}
+\resumeSubheading
+  { {{ job.company }} }{ {{ job.position }} }{ {{ job.start }} -- {{ job.end }} }{ {{ job.location or '' }} }
+\resumeItemListStart
+  \resumeItem{Sample bullet point for {{ job.company }}}
+\resumeItemListEnd
+{% endfor %}
+\resumeSubHeadingListEnd
+
+\end{document} 
