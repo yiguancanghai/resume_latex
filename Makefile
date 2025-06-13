@@ -20,7 +20,7 @@ resume.pdf: resume.tex
 # 清理中间文件
 clean:
 	@echo "🧹 清理中间文件..."
-	rm -f *.aux *.log *.out *.pdf *.tex
+	rm -f *.aux *.log *.out *.pdf resume.tex
 	@echo "✅ 清理完成"
 
 # 显示帮助信息
